@@ -21,8 +21,8 @@
             </svg>
 
         </div>
-        <input class="form-wrapper__input" id="email" class="block mt-1 w-full" type="email" name="email"
-            :value="old('email')" required autofocus autocomplete="email" placeholder="Adres email" />
+        <input class="form-wrapper__input" id="email" type="email" name="email" :value="old('email')" required autofocus
+            autocomplete="email" placeholder="Adres email" />
         <x-input-error :messages="$errors->get('email')" class="mt-2" />
     </div>
 
@@ -35,8 +35,8 @@
                     fill="#848484" fill-opacity="0.7" />
             </svg>
         </div>
-        <input class="form-wrapper__input" id="password" class="block mt-1 w-full" type="password" name="password"
-            required autocomplete="current-password" placeholder="Hasło" />
+        <input class="form-wrapper__input" id="password" type="password" name="password" required
+            autocomplete="current-password" placeholder="Hasło" />
         <x-input-error :messages="$errors->get('password')" class="mt-2" />
     </div>
     <a class="form-wrapper__forgot-password" href="{{route('password.request')}}">Nie pamiętasz hasła?</a>

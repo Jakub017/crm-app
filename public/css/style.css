@@ -94,8 +94,21 @@
   border: none;
   outline: none;
   font-size: 2rem;
-  width: 270px;
+  width: 230px;
   text-transform: uppercase;
+  cursor: pointer;
+}
+.form-wrapper__cancel-button {
+  background-color: #848484;
+  color: #fff;
+  padding: 1.5rem 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  width: 230px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 .form-wrapper__spacer {
   width: 100%;
@@ -178,6 +191,24 @@
   width: 17px;
   height: 17px;
   border: none;
+}
+.form-wrapper__info {
+  font-size: 1.6rem;
+  color: #848484;
+}
+.form-wrapper__forgot-link {
+  text-decoration: none;
+  color: #848484;
+  font-size: 1.6rem;
+}
+.form-wrapper__verify-wrapper {
+  width: 100%;
+  max-width: 550px;
+  margin: 1rem auto 0 auto;
+  display: flex;
+  padding: 0 2rem;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .auth-footer {
