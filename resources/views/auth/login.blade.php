@@ -1,4 +1,4 @@
-@extends('layouts.auth')
+@extends('auth.layouts.main')
 @section('title', 'Logowanie')
 <!-- Session Status -->
 <x-auth-session-status class="mb-4" :status="session('status')" />

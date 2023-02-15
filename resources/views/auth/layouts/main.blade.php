@@ -19,7 +19,7 @@
         </div>
         <div class="form-wrapper__half">
             @yield('content')
-            @include('elements.footer')
+            @include('auth.elements.footer')
         </div>
     </div>
 </body>

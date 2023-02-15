@@ -241,6 +241,58 @@
   text-decoration: none;
 }
 
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  box-shadow: 0 0 4px #ccc;
+}
+.nav__user-info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.nav__user-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.nav__user-email {
+  color: #737373;
+  font-size: 1.6rem;
+}
+.nav__user-name {
+  color: #1A8FFF;
+  font-size: 1.4rem;
+}
+.nav__user-photo-wrapper {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: none;
+}
+.nav__user-photo {
+  width: 100%;
+}
+.nav__arrow-icon {
+  margin-top: 2px;
+  width: 18px;
+}
+.nav__hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav__hamburger svg {
+  width: 40px;
+}
+
 @media (min-width: 1024px) {
   .form-wrapper {
     justify-content: space-between;
