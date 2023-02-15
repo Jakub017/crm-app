@@ -275,7 +275,6 @@
   height: 5rem;
   border-radius: 50%;
   overflow: hidden;
-  display: none;
 }
 .nav__user-photo {
   width: 100%;
@@ -291,6 +290,15 @@
 }
 .nav__hamburger svg {
   width: 40px;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard__content {
+  padding: 1.5rem;
 }
 
 @media (min-width: 1024px) {

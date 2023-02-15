@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pulpit', function () {
-    return view('dashboard.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/pulpit', function () {
+//     return view('dashboard.index');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::controller(DashboardController::class)->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/pulpit', 'index')->name('dashboard');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

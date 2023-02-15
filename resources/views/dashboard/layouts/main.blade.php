@@ -13,9 +13,16 @@
 </head>
 
 <body>
-    @include('dashboard.elements.nav')
-    @include('elements.sidebar')
-    @yield('content')
+    <div class="dashboard">
+        @include('elements.sidebar')
+        <div class="dashboard__right">
+            @include('dashboard.elements.nav')
+            @yield('content')
+        </div>
+
+    </div>
+
+
 </body>
 
 </html>
