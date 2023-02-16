@@ -12,7 +12,6 @@
                 </clipPath>
             </defs>
         </svg>
-
     </div>
     <div class="nav__user-info">
         <div class="nav__user-photo-wrapper">

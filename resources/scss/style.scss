@@ -300,6 +300,7 @@ $classicBorderRadius: 10px;
     align-items: center;
     padding: 1.5rem;
     box-shadow: 0 0 4px #ccc;
+    height: 100px;
 
     &__user-info {
         display: flex;
@@ -332,7 +333,6 @@ $classicBorderRadius: 10px;
         height: 5rem;
         border-radius: 50%;
         overflow: hidden;
-        // display: none;
     }
 
     &__user-photo {
@@ -360,15 +360,196 @@ $classicBorderRadius: 10px;
 
 // Dashboard starts
 
-.dashboard {
+.dashboard-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    width: 100%;
+}
 
-    &__content {
-        padding:
+.main {
+    width: 100%;
+}
+
+.main-content {
+    padding: 1.5rem;
+
+    &__title {
+        font-size: 3.6rem;
+        font-weight: 400;
+        margin-top: 2rem;
+    }
+
+    &__name {
+        font-size: 3.6rem;
+        font-weight: bold;
+        font-weight: 700;
+    }
+
+    &__section {
+        margin-top: 3rem;
+    }
+
+    &__section-name {
+        font-size: 2rem;
+        font-weight: 400;
+        position: relative;
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: #E6E6E6;
+            position: absolute;
+            top: calc(100% + 1rem);
+            left: 0;
+        }
+    }
+
+    &__latest-wrapper {
+        margin-top: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__latest-note {
+        width: 80%;
+        max-width: 280px;
+        padding: 2rem;
+        border: 1px solid #E6E6E6;
+        border-radius: 1rem;
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__latest-note-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    &__latest-note-title {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+
+    &__latest-note-content {
+        font-size: 1.4rem;
+        color: $gray;
+    }
+
+}
+
+
+
+.sidebar {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background-color: #F9F8F8;
+    width: 300px;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0 2rem;
+    gap: 2rem;
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+
+
+    &--active {
+        left: 0;
+    }
+
+    &__close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 3;
+    }
+
+    &__logo-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 2px;
+            width: 80%;
+            background-color: #848484;
+            opacity: 0.4;
+        }
+    }
+
+    &__logo {
+        max-height: 80px;
+    }
+
+    &__top {
+        position: relative;
+        width: 100%;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: calc(100% + 2rem);
+            left: 50%;
+            transform: translateX(-50%);
+            height: 2px;
+            width: 80%;
+            background-color: #848484;
+            opacity: 0.4;
+        }
+    }
+
+    &__menu {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    &__menu-link {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-decoration: none;
+        font-size: 1.6rem;
+        color: #848484;
+        gap: 0.7rem;
+    }
+
+    &__icon {
+        width: 50px;
+    }
+
+    &__bottom {
+        margin-top: 1.5rem;
     }
 }
+
+
 
 // Dashboard ends
 
@@ -386,6 +567,39 @@ $classicBorderRadius: 10px;
         &__half:first-child {
             display: block;
         }
+    }
+
+    .dashboard-wrapper {
+        align-items: flex-start;
+    }
+
+    .nav {
+        justify-content: flex-end;
+        padding-left: 4rem;
+        padding-right: 4rem;
+
+        &__hamburger {
+            display: none;
+        }
+    }
+
+    .sidebar {
+        position: relative;
+        left: 0;
+
+
+        &__close {
+            display: none;
+        }
+    }
+
+    .main {
+        width: calc(100% - 300px);
+    }
+
+    .main-content {
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 }
 

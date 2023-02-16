@@ -13,16 +13,16 @@
 </head>
 
 <body>
-    <div class="dashboard">
+    <div class="dashboard-wrapper">
         @include('elements.sidebar')
-        <div class="dashboard__right">
+        <div class="main">
             @include('dashboard.elements.nav')
             @yield('content')
         </div>
-
     </div>
-
-
 </body>
+
+
+<script src="{{asset('js/app.js')}}"></script>
 
 </html>

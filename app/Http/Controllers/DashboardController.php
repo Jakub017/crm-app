@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use \Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Note;
+
 
 class DashboardController extends Controller
 {
@@ -13,7 +15,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        $latestNotes = Note::where('user_id', Auth::user()->id)->orderBy('updated_at', 'desc')->limit(2)->get();
+        return view('dashboard.index', [
+            'latestNotes' => $latestNotes,
+        ]);
     }
 
     /**
