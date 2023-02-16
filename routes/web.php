@@ -30,6 +30,8 @@ Route::controller(DashboardController::class)->middleware(['auth', 'verified'])-
 
 Route::controller(NotesController::class)->middleware(['auth', 'verified'])->group(function () {
     Route::get('/notatki', 'index')->name('notes');
+    Route::get('/notatki/dodaj', 'create')->name('notes.add');
+    Route::post('/notatki/nowa', 'store')->name('notes.store');
 });
 
 Route::middleware('auth')->group(function () {

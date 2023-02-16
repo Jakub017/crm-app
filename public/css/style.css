@@ -496,8 +496,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  max-width: 300px;
+  width: 100%;
+  max-width: 350px;
   height: 250px;
   padding: 2rem;
   transition: 0.3s ease-in-out;
@@ -560,6 +560,20 @@
 }
 .notes__add-icon {
   width: 40px;
+}
+.notes__form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+.notes__group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 @media (min-width: 1024px) {

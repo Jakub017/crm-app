@@ -23,7 +23,7 @@ class NotesController extends Controller
      */
     public function create()
     {
-        //
+        return view('notes.add');
     }
 
     /**
