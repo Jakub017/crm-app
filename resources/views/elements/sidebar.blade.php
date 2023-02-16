@@ -14,7 +14,7 @@
     <div class="sidebar__top">
         <ul class="sidebar__menu">
             <li class="sidebar__menu-item">
-                <a class="sidebar__menu-link" href="#">
+                <a class="sidebar__menu-link" href="{{route('dashboard')}}">
                     <svg class="sidebar__icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -24,7 +24,7 @@
                     Pulpit
                 </a>
             </li>
-            <li class="dashboard__sidebar-menu-item">
+            <li class="sidebar__menu-item">
                 <a class="sidebar__menu-link" href="#">
                     <svg class="sidebar__icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -35,8 +35,8 @@
                     Zapisane dane
                 </a>
             </li>
-            <li class="dashboard__sidebar-menu-item">
-                <a class="sidebar__menu-link" href="#">
+            <li class="sidebar__menu-item">
+                <a class="sidebar__menu-link" href="{{route('notes')}}">
                     <svg class="sidebar__icon" width="39" height="38" viewBox="0 0 39 38" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -46,7 +46,7 @@
                     Notatki
                 </a>
             </li>
-            <li class="dashboard__sidebar-menu-item">
+            <li class="sidebar__menu-item">
                 <a class="sidebar__menu-link" href="#">
                     <svg class="sidebar__icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +73,7 @@
                     Ustawienia
                 </a>
             </li>
-            <li class="dashboard__sidebar-menu-item">
+            <li class="sidebar__menu-item">
                 <a class="sidebar__menu-link" href="#">
                     <svg class="sidebar__icon" width="43" height="44" viewBox="0 0 43 44" fill="none"
                         xmlns="http://www.w3.org/2000/svg">

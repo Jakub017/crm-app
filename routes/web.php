@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NotesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,10 @@ Route::get('/', function () {
 
 Route::controller(DashboardController::class)->middleware(['auth', 'verified'])->group(function () {
     Route::get('/pulpit', 'index')->name('dashboard');
+});
+
+Route::controller(NotesController::class)->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/notatki', 'index')->name('notes');
 });
 
 Route::middleware('auth')->group(function () {

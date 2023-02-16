@@ -426,6 +426,10 @@ $classicBorderRadius: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        &:hover {
+            box-shadow: 0 0 4px #ccc;
+        }
     }
 
     &__latest-note-text {
@@ -538,6 +542,21 @@ $classicBorderRadius: 10px;
         font-size: 1.6rem;
         color: #848484;
         gap: 0.7rem;
+        width: 100%;
+        padding: .5rem;
+        min-height: 60px;
+        border-radius: 1rem;
+        transition: .2s ease-in-out;
+
+        &:hover {
+            background-color: #E8E7E7;
+        }
+    }
+
+    &__menu-item {
+        width: 100%;
+
+
     }
 
     &__icon {
@@ -546,12 +565,120 @@ $classicBorderRadius: 10px;
 
     &__bottom {
         margin-top: 1.5rem;
+        width: 100%;
     }
 }
 
 
 
 // Dashboard ends
+
+
+.notes {
+    padding: 1.5rem;
+    position: relative;
+
+    &__title {
+        font-size: 3.6rem;
+        font-weight: 400;
+        margin-top: 2rem;
+    }
+
+    &__wrapper {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    &__note {
+        border: 1px solid #E6E6E6;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        max-width: 300px;
+        height: 250px;
+        padding: 2rem;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            box-shadow: 0 0 4px #ccc;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    &__name {
+        font-size: 2.2rem;
+        font-weight: 400;
+    }
+
+    &__content {
+        font-size: 1.6rem;
+        line-height: 1.3;
+        color: #848484;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    &__date {
+        color: $blue;
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+
+    &__action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__edit,
+    &__delete {
+        text-decoration: none;
+
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+
+    }
+
+    &__add {
+        position: fixed;
+        bottom: 4rem;
+        right: 4rem;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-color: $blue;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__add-icon {
+        width: 40px;
+    }
+}
 
 
 // Media queries starts
@@ -597,7 +724,8 @@ $classicBorderRadius: 10px;
         width: calc(100% - 300px);
     }
 
-    .main-content {
+    .main-content,
+    .notes {
         padding-left: 4rem;
         padding-right: 4rem;
     }

@@ -354,6 +354,9 @@
   justify-content: space-between;
   align-items: center;
 }
+.main-content__latest-note:hover {
+  box-shadow: 0 0 4px #ccc;
+}
 .main-content__latest-note-text {
   display: flex;
   flex-direction: column;
@@ -449,12 +452,114 @@
   font-size: 1.6rem;
   color: #848484;
   gap: 0.7rem;
+  width: 100%;
+  padding: 0.5rem;
+  min-height: 60px;
+  border-radius: 1rem;
+  transition: 0.2s ease-in-out;
+}
+.sidebar__menu-link:hover {
+  background-color: #E8E7E7;
+}
+.sidebar__menu-item {
+  width: 100%;
 }
 .sidebar__icon {
   width: 50px;
 }
 .sidebar__bottom {
   margin-top: 1.5rem;
+  width: 100%;
+}
+
+.notes {
+  padding: 1.5rem;
+  position: relative;
+}
+.notes__title {
+  font-size: 3.6rem;
+  font-weight: 400;
+  margin-top: 2rem;
+}
+.notes__wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.notes__note {
+  border: 1px solid #E6E6E6;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 300px;
+  height: 250px;
+  padding: 2rem;
+  transition: 0.3s ease-in-out;
+}
+.notes__note:hover {
+  box-shadow: 0 0 4px #ccc;
+}
+.notes__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.notes__name {
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+.notes__content {
+  font-size: 1.6rem;
+  line-height: 1.3;
+  color: #848484;
+}
+.notes__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.notes__date {
+  color: #1A8FFF;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.notes__action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.notes__edit, .notes__delete {
+  text-decoration: none;
+}
+.notes__edit svg, .notes__delete svg {
+  width: 30px;
+  height: 30px;
+}
+.notes__add {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: #1A8FFF;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notes__add-icon {
+  width: 40px;
 }
 
 @media (min-width: 1024px) {
@@ -488,7 +593,8 @@
   .main {
     width: calc(100% - 300px);
   }
-  .main-content {
+  .main-content,
+  .notes {
     padding-left: 4rem;
     padding-right: 4rem;
   }
