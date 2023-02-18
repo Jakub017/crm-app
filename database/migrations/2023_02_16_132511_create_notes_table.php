@@ -17,7 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('content');
-            $table->foreignUuid('user_id');
+            $table->unsignedBigInteger('user_id'); // Tworzenie kolumny o nazwie user_id
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade'); 
+            /* 
+            Tworzenie klucza obcego z powiązaniem pomiędzy kolumną user_id, a kolumną id w tabeli users.
+            onDelete('cascade') sprawia, że po usunięciu użytkownika zostaną usunięte również wszystkie jego powiązane notatki.
+            */
             $table->timestamps();
         });
     }

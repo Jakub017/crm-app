@@ -9,20 +9,14 @@
     <div class="main-content__section">
         <h3 class="main-content__section-name">Twoje ostatnie notatki</h3>
         <div class="main-content__latest-wrapper">
+            @foreach($latestNotes as $latestNote)
             <div class="main-content__latest-note">
                 <div class="main-content__latest-note-text">
-                    <h3 class="main-content__latest-note-title">Tytuł notatki</h3>
-                    <p class="main-content__latest-note-content">Lorem Ipsum is simply dummy text of the printingand
-                        typesetting industry...</p>
+                    <h3 class="main-content__latest-note-title">{{ $latestNote->title }}</h3>
+                    <p class="main-content__latest-note-content">{{ $latestNote->content }}</p>
                 </div>
             </div>
-            <div class="main-content__latest-note">
-                <div class="main-content__latest-note-text">
-                    <h3 class="main-content__latest-note-title">Tytuł notatki</h3>
-                    <p class="main-content__latest-note-content">Lorem Ipsum is simply dummy text of the printingand
-                        typesetting industry...</p>
-                </div>
-            </div>
+            @endforeach
             <div class="main-content__latest-note">
                 <div class="main-content__latest-note-text">
                     <h3 class="main-content__latest-note-title">Dodaj notatkę</h3>

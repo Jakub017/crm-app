@@ -380,7 +380,7 @@
   background-color: #F9F8F8;
   width: 300px;
   height: 100vh;
-  z-index: 2;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -471,6 +471,38 @@
   margin-top: 1.5rem;
   width: 100%;
 }
+.sidebar__footer {
+  margin-bottom: 0;
+  margin-top: auto;
+  padding-bottom: 2rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.sidebar__footer-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+}
+.sidebar__footer-info {
+  color: #737373;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.sidebar__footer-author {
+  color: #1A8FFF;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.note-view {
+  padding: 1.5rem;
+}
 
 .notes {
   padding: 1.5rem;
@@ -495,7 +527,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   max-width: 350px;
   height: 250px;
@@ -532,11 +564,11 @@
   font-size: 1.6rem;
   font-weight: 400;
 }
-.notes__action {
+.notes__actions {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.4rem;
 }
 .notes__edit, .notes__delete {
   text-decoration: none;
@@ -544,6 +576,12 @@
 .notes__edit svg, .notes__delete svg {
   width: 30px;
   height: 30px;
+}
+.notes__delete {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 .notes__add {
   position: fixed;
@@ -568,12 +606,61 @@
   justify-content: center;
   align-items: flex-start;
   gap: 2.5rem;
+  width: 100%;
+  max-width: 800px;
 }
 .notes__group {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  width: 100%;
+  max-width: 800px;
+}
+.notes__input, .notes__textarea {
+  border: 2px solid #EEE;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  width: 100%;
+  outline-color: #1A8FFF;
+}
+.notes__label {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+}
+.notes__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  align-self: flex-end;
+}
+.notes__submit-button {
+  background-color: #1A8FFF;
+  color: #fff;
+  padding: 1.5rem 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  width: 230px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.notes__cancel-button {
+  background-color: #848484;
+  color: #fff;
+  padding: 1.5rem 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  width: 230px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
 }
 
 @media (min-width: 1024px) {
@@ -608,7 +695,8 @@
     width: calc(100% - 300px);
   }
   .main-content,
-  .notes {
+  .notes,
+  .note-view {
     padding-left: 4rem;
     padding-right: 4rem;
   }

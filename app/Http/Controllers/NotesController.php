@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use App\Models\Note;
+use \Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class NotesController extends Controller
 {
@@ -13,7 +17,11 @@ class NotesController extends Controller
      */
     public function index()
     {
-        return view('notes.index');
+
+        $notes = Note::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+        return view('notes.index', [
+            'notes' => $notes,
+        ]);
     }
 
     /**
@@ -34,7 +42,24 @@ class NotesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = $request->validate([
+            'title' => 'required|max:50',
+            'content' => 'required|min:20',
+            // 'icon' => 'image',
+        ]);
+
+        $attributes['user_id'] = Auth::user()->id;
+        // $attributes['icon'] = $request->file('icon')->store('icons');
+        
+        Note::create($attributes);
+
+        // Note::create([
+        //     'title' => $request->title,
+        //     'content' => $request->content,
+        //     'user_id' => Auth::user()->id,
+        // ]);
+
+        return redirect('/notatki');
     }
 
     /**
@@ -45,7 +70,10 @@ class NotesController extends Controller
      */
     public function show($id)
     {
-        //
+        $note = Note::find($id);
+        return view('notes.note', [
+            'note' => $note,
+        ]);
     }
 
     /**
@@ -56,7 +84,10 @@ class NotesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $note = Note::find($id);
+        return view('notes.edit', [
+            'note' => $note,
+        ]);
     }
 
     /**
@@ -68,7 +99,21 @@ class NotesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $note = Note::find($id);
+
+        $attributes = $request->validate([
+            'title' => 'required|max:50',
+            'content' => 'required|min:20'
+        ]);
+
+        $note->update($attributes);
+
+        // $note->update([
+        //     'title' => $request->title,
+        //     'content' => $request->content
+        // ]);
+
+        return redirect('/notatki');
     }
 
     /**
@@ -79,6 +124,9 @@ class NotesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $note = Note::find($id);
+        $note->delete();
+
+        return redirect('/notatki');
     }
 }
