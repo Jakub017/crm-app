@@ -22,7 +22,7 @@
                 </a>
             </li>
             <li class="sidebar__menu-item">
-                <a class="sidebar__menu-link" href="#">
+                <a class="sidebar__menu-link" href="{{route('passwords')}}">
                     <svg class="sidebar__icon" width="50" height="50" viewBox="0 0 50 50" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path

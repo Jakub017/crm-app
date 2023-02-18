@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NotesController;
+use App\Http\Controllers\PasswordsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +39,11 @@ Route::controller(NotesController::class)->middleware(['auth', 'verified'])->gro
     Route::patch('/notatki/{id}', 'update')->name('notes.update');
     Route::post('/notatki/nowa', 'store')->name('notes.store');
 });
+
+Route::controller(PasswordsController::class)->middleware(['auth', 'verified'])->group(function () {
+    Route::get('/zapisane-dane', 'index')->name('passwords');
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
