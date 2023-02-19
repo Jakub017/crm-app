@@ -663,6 +663,138 @@
   text-decoration: none;
 }
 
+.passwords {
+  padding: 1.5rem;
+  max-width: 1200px;
+}
+.passwords__title {
+  font-size: 3.6rem;
+  font-weight: 400;
+}
+.passwords__top-bar {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.passwords__filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.passwords__filter {
+  font-size: 1.6rem;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  border: 1px solid #E6E6E6;
+  border-radius: 0.5rem;
+}
+.passwords__option {
+  font-size: 1.6rem;
+}
+.passwords__table-wrapper {
+  margin-top: 2rem;
+  width: 100%;
+  overflow-x: auto;
+}
+.passwords__table {
+  width: 1120px;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+  position: relative;
+}
+.passwords__table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  border-bottom: 1px solid #ccc;
+}
+.passwords__table-row:first-child {
+  position: sticky;
+  top: 0;
+}
+.passwords__table-row:last-child {
+  border-bottom: 0;
+}
+.passwords__table-cell {
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-align: left;
+  border-radius: 1rem;
+  flex-basis: 150px;
+  color: #737373;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.passwords__table-cell--last {
+  text-align: center;
+}
+.passwords__table-cell--icon {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  width: 150px;
+  height: 100%;
+}
+.passwords__table-cell--password {
+  position: relative;
+}
+.passwords__icon {
+  max-width: 20px;
+}
+.passwords__link {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #737373;
+}
+.passwords__table-row:first-child {
+  background-color: #E8E7E7;
+  color: #737373;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.passwords__actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+.passwords__delete {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.passwords__password {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.6rem;
+  max-width: 98px;
+  color: #737373;
+}
+.passwords__see {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
 @media (min-width: 1024px) {
   .form-wrapper {
     justify-content: space-between;
@@ -696,7 +828,8 @@
   }
   .main-content,
   .notes,
-  .note-view {
+  .note-view,
+  .passwords {
     padding-left: 4rem;
     padding-right: 4rem;
   }
