@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NotesController;
 use App\Http\Controllers\PasswordsController;
+use App\Http\Controllers\EventsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +43,14 @@ Route::controller(NotesController::class)->middleware(['auth', 'verified'])->gro
 
 Route::controller(PasswordsController::class)->middleware(['auth', 'verified'])->group(function () {
     Route::get('/zapisane-dane', 'index')->name('passwords');
+});
+
+Route::controller(EventsController::class)->middleware(['auth', 'verified'])->group(function() {
+    Route::get('/wydarzenia', 'index')->name('events');
+
+    Route::get('/wydarzenia/dodaj', 'create')->name('events.add');
+
+    Route::post('/wydarzenia/nowe', 'store')->name('events.store');
 });
 
 
