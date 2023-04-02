@@ -9,8 +9,12 @@
 <div class="calendar">
     <h2 class="calendar__title">Twoje wydarzenia</h2>
     <div class="calendar__wrapper">
+        <form action="" class="calendar__search">
+            <input class="calendar__search-input" type="text" name="search"
+                placeholder="Szukaj według nazwy lub tagów...">
+            <button type="submit" class="calendar__search-button">Szukaj</button>
+        </form>
         @foreach($events as $event)
-
         <div class="calendar__item">
             <div class="calendar__top">
                 <h2 class="calendar__name">{{ $event->title }}</h2>
@@ -24,13 +28,12 @@
                 <ul class="calendar__tags-list">
                     @foreach(explode(',', $event->tags) as $tag)
                     <li>
-                        <a class="calendar__tag" href="#">{{ $tag }}</a>
+                        <a class="calendar__tag" href="/wydarzenia/?tag={{$tag}}">{{ $tag }}</a>
                     </li>
                     @endforeach
                 </ul>
             </div>
         </div>
-
         @endforeach
     </div>
     <a href="{{route('events.add')}}" class="notes__add">

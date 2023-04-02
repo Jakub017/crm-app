@@ -5,7 +5,6 @@
 
 <div class="main-content">
     <h1 class="main-content__title">Dzień dobry, <span class="main-content__name">{{ Auth::user()->name }}</span></h1>
-
     <div class="main-content__section">
         <h3 class="main-content__section-name">Twoje ostatnie notatki</h3>
         <div class="main-content__latest-wrapper">
@@ -34,6 +33,21 @@
     </div>
     <div class="main-content__section">
         <h3 class="main-content__section-name">Twoje nadchodzące wydarzenia</h3>
+        <div class="main-content__latest-wrapper">
+            @foreach($upcomingEvents as $upcomingEvent)
+            <div class="calendar__item">
+                <div class="calendar__top">
+                    <h2 class="calendar__name">{{ $upcomingEvent->title }}</h2>
+                    <div class="calendar__date" style="background-color: {{$upcomingEvent->color}};">
+                        <span
+                            class="calendar__day">{{ \Carbon\Carbon::parse($upcomingEvent->day)->format('d.m')}}</span>
+                        <span
+                            class="calendar__hour">{{ \Carbon\Carbon::parse($upcomingEvent->hour)->format('h:m')}}</span>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
     </div>
     <div class="main-content__section">
         <h3 class="main-content__section-name">Ostatnio edytowane dane</h3>

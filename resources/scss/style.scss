@@ -1166,6 +1166,35 @@ $classicBorderRadius: 10px;
     &__add-icon {
         width: 40px;
     }
+
+    &__search {
+        width: 100%;
+        position: relative;
+    }
+
+    &__search-input {
+        width: 100%;
+        border-radius: 1rem;
+        border: 2px solid #E6E6E6;
+        padding: 1.5rem;
+        font-size: 1.6rem;
+        padding-right: 9rem;
+    }
+
+    &__search-button {
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        transform: translateY(-50%);
+        background-color: $blue;
+        color: #fff;
+        border: none;
+        outline: none;
+        font-size: 1.6rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        cursor: pointer;
+    }
 }
 
 

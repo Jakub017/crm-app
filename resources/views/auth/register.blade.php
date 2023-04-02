@@ -8,7 +8,7 @@
 <h2 class="form-wrapper__title">Zarejestruj się!</h2>
 <h5 class="form-wrapper__description">Lorem Ipsum is simply dummy text of the printing and typesetting
     industry.</h5>
-<form class="form-wrapper__form" method="POST" action="{{ route('register') }}">
+<form class="form-wrapper__form" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
     @csrf
 
     <!-- Name -->
@@ -24,6 +24,20 @@
         <input class="form-wrapper__input" id="name" class="block mt-1 w-full" type="text" name="name"
             :value="old('name')" required autofocus autocomplete="name" placeholder="Imię" />
         <x-input-error :messages="$errors->get('name')" class="mt-2" />
+    </div>
+
+    <!-- Avatar -->
+    <div class="form-wrapper__input-group">
+        <div class="form-wrapper__input-icon">
+            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M23 3.83334C20.483 3.83334 17.9907 4.3291 15.6653 5.29232C13.3399 6.25553 11.227 7.66734 9.44716 9.44713C5.85271 13.0416 3.83337 17.9167 3.83337 23C3.83337 28.0833 5.85271 32.9584 9.44716 36.5529C11.227 38.3327 13.3399 39.7445 15.6653 40.7077C17.9907 41.6709 20.483 42.1667 23 42.1667C28.0834 42.1667 32.9585 40.1473 36.5529 36.5529C40.1474 32.9584 42.1667 28.0833 42.1667 23C42.1667 20.483 41.6709 17.9907 40.7077 15.6652C39.7445 13.3398 38.3327 11.2269 36.5529 9.44713C34.7731 7.66734 32.6602 6.25553 30.3348 5.29232C28.0094 4.3291 25.517 3.83334 23 3.83334ZM13.5509 35.0367C14.375 33.3117 19.3967 31.625 23 31.625C26.6034 31.625 31.625 33.3117 32.4492 35.0367C29.7647 37.1757 26.4325 38.3383 23 38.3333C19.435 38.3333 16.1575 37.1067 13.5509 35.0367ZM35.19 32.2575C32.4492 28.9225 25.7984 27.7917 23 27.7917C20.2017 27.7917 13.5509 28.9225 10.81 32.2575C8.77106 29.6022 7.66607 26.3479 7.66671 23C7.66671 14.5475 14.5475 7.66668 23 7.66668C31.4525 7.66668 38.3334 14.5475 38.3334 23C38.3334 26.4883 37.145 29.7083 35.19 32.2575ZM23 11.5C19.2817 11.5 16.2917 14.49 16.2917 18.2083C16.2917 21.9267 19.2817 24.9167 23 24.9167C26.7184 24.9167 29.7084 21.9267 29.7084 18.2083C29.7084 14.49 26.7184 11.5 23 11.5ZM23 21.0833C22.2375 21.0833 21.5063 20.7804 20.9671 20.2413C20.4279 19.7021 20.125 18.9708 20.125 18.2083C20.125 17.4458 20.4279 16.7146 20.9671 16.1754C21.5063 15.6362 22.2375 15.3333 23 15.3333C23.7625 15.3333 24.4938 15.6362 25.033 16.1754C25.5721 16.7146 25.875 17.4458 25.875 18.2083C25.875 18.9708 25.5721 19.7021 25.033 20.2413C24.4938 20.7804 23.7625 21.0833 23 21.0833Z"
+                    fill="#848484" fill-opacity="0.7" />
+            </svg>
+
+        </div>
+        <input class="form-wrapper__input" id="avatar" class="block mt-1 w-full" type="file" name="avatar" />
+        <x-input-error :messages="$errors->get('avatar')" class="mt-2" />
     </div>
 
     <!-- Email Address -->
@@ -68,6 +82,8 @@
             name="password_confirmation" required autocomplete="new-password" placeholder="Powtórz hasło" />
         <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
     </div>
+
+
     <button class="form-wrapper__submit-button">
         {{ __('Zarejestruj') }}
     </button>

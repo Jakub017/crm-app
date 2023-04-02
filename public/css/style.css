@@ -984,6 +984,32 @@
 .calendar__add-icon {
   width: 40px;
 }
+.calendar__search {
+  width: 100%;
+  position: relative;
+}
+.calendar__search-input {
+  width: 100%;
+  border-radius: 1rem;
+  border: 2px solid #E6E6E6;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  padding-right: 9rem;
+}
+.calendar__search-button {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+  background-color: #1A8FFF;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
 
 @media (min-width: 1024px) {
   .form-wrapper {
