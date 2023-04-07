@@ -93,12 +93,10 @@ $classicBorderRadius: 10px;
         background-color: $lightGray;
         text-align: center;
         border-right: 2px solid #EEE;
-        // height: 100%;
         padding: .5rem;
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
 
     &__input {
@@ -107,6 +105,15 @@ $classicBorderRadius: 10px;
         border: none;
         outline: none;
         font-size: 1.6rem;
+    }
+
+    &__label {
+        width: 100%;
+        padding: 2rem;
+        border: none;
+        outline: none;
+        font-size: 1.6rem;
+        color: gray;
     }
 
     &__submit-button {

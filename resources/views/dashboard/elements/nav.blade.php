@@ -15,7 +15,9 @@
     </div>
     <div class="nav__user-info">
         <div class="nav__user-photo-wrapper">
-            <img class="nav__user-photo" src="{{asset('img/user.jpg')}}" alt="">
+            <img class="nav__user-photo"
+                src="{{Auth::user()->avatar ? asset('img/default-user.png') : asset('storage/'.Auth::user()->avatar)}}"
+                alt="">
         </div>
         <div class="nav__user-login">
             <h2 class="nav__user-email">{{ Auth::user()->email }}</h2>

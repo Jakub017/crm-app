@@ -23,5 +23,6 @@
         </div>
     </div>
 </body>
+<script src="{{asset('js/image-name.js')}}"></script>
 
 </html>

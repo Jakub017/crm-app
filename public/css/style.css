@@ -86,6 +86,14 @@
   outline: none;
   font-size: 1.6rem;
 }
+.form-wrapper__label {
+  width: 100%;
+  padding: 2rem;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  color: gray;
+}
 .form-wrapper__submit-button {
   background-color: #1A8FFF;
   color: #fff;
