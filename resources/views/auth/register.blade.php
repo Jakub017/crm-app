@@ -26,28 +26,6 @@
         <x-input-error :messages="$errors->get('name')" class="mt-2" />
     </div>
 
-    <!-- Avatar -->
-    <div class="form-wrapper__input-group">
-        <div class="form-wrapper__input-icon">
-            <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M38.3334 9.58333H32.2575L28.75 5.75H17.25L13.7425 9.58333H7.66671C5.55837 9.58333 3.83337 11.3083 3.83337 13.4167V36.4167C3.83337 38.525 5.55837 40.25 7.66671 40.25H38.3334C40.4417 40.25 42.1667 38.525 42.1667 36.4167V13.4167C42.1667 11.3083 40.4417 9.58333 38.3334 9.58333ZM38.3334 36.4167H7.66671V13.4167H15.4292L18.9367 9.58333H27.0634L30.5709 13.4167H38.3334V36.4167Z"
-                    fill="#848484" fill-opacity="0.7" />
-                <path
-                    d="M23 24.9167C25.1171 24.9167 26.8333 23.2004 26.8333 21.0833C26.8333 18.9662 25.1171 17.25 23 17.25C20.8829 17.25 19.1666 18.9662 19.1666 21.0833C19.1666 23.2004 20.8829 24.9167 23 24.9167Z"
-                    fill="#848484" fill-opacity="0.7" />
-                <path
-                    d="M28.3284 27.945C26.6477 27.2115 24.8338 26.8329 23 26.8329C21.1663 26.8329 19.3523 27.2115 17.6717 27.945C16.9773 28.2418 16.3855 28.7361 15.9697 29.3666C15.554 29.997 15.3327 30.7357 15.3334 31.4908V32.5833H30.6667V31.4908C30.6667 29.9383 29.7467 28.5583 28.3284 27.945Z"
-                    fill="#848484" fill-opacity="0.7" />
-            </svg>
-
-        </div>
-        <input placeholder="Zdjęcie profilowe" class="form-wrapper__input form-wrapper__input--file" id="avatar"
-            type="file" name="avatar" style="display: none;" />
-        <label class="form-wrapper__label" for="avatar">Wgraj zdjęcie profilowe (Kliknij)</label>
-        <x-input-error :messages="$errors->get('avatar')" class="mt-2" />
-    </div>
-
     <!-- Email Address -->
     <div class="form-wrapper__input-group">
         <div class="form-wrapper__input-icon">

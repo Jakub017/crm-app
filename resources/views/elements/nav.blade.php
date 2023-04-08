@@ -13,17 +13,15 @@
             </defs>
         </svg>
     </div>
-    <h2>Szukajka</h2>
     <div class="nav__user-info">
         <div class="nav__user-photo-wrapper">
-            <img class="nav__user-photo" src="{{asset('img/user.jpg')}}" alt="">
+            <img class="nav__user-photo"
+                src="https://ui-avatars.com/api/?background=1A8FFF&color=fff&name={{Auth::user()->name}}&length=1$font-size=1"
+                alt="">
         </div>
         <div class="nav__user-login">
             <h2 class="nav__user-email">{{ Auth::user()->email }}</h2>
             <h5 class="nav__user-name">{{ Auth::user()->name }}</h5>
-        </div>
-        <div class="nav__arrow">
-            <img class="nav__arrow-icon" src="{{asset('img/arrow-down.png')}}" alt="">
         </div>
     </div>
 </nav>
