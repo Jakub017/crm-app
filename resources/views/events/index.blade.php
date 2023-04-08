@@ -1,8 +1,5 @@
-@extends('notes.layouts.main')
+@extends('layouts.main')
 @section('title', 'Wydarzenia')
-
-
-
 
 @section('content')
 

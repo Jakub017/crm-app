@@ -1,4 +1,4 @@
-@extends('notes.layouts.main')
+@extends('layouts.main')
 @section('title', 'Notatki')
 
 @section('content')

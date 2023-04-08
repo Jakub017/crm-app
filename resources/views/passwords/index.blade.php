@@ -1,4 +1,4 @@
-@extends('passwords.layouts.main')
+@extends('layouts.main')
 @section('title', 'Zapisane dane')
 
 @section('content')
