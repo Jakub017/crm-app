@@ -15,6 +15,15 @@ $lightGray: #FAF9F9;
 $classicBorderRadius: 10px;
 
 
+// TinyMCE starts
+
+.tox.tox-tinymce {
+    width: 100%;
+    min-height: 300px;
+}
+
+// TinyMCE ends
+
 // Authentication blades starts
 
 .form-wrapper {
@@ -312,7 +321,7 @@ $classicBorderRadius: 10px;
     &__user-info {
         display: flex;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         gap: 1rem;
     }
 
@@ -1204,10 +1213,9 @@ $classicBorderRadius: 10px;
     }
 }
 
-
-
-
 // Calendar ends
+
+
 
 // Media queries starts
 

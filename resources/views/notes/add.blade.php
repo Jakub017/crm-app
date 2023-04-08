@@ -13,7 +13,7 @@
         </div>
         <div class="notes__group">
             <label for="title" class="notes__label">Treść notatki</label>
-            <textarea name="content" id="content" cols="30" rows="10" class="notes__textarea"></textarea>
+            <textarea name="content" id="default-editor" class="notes__textarea"></textarea>
         </div>
         <div class="notes__buttons">
             <a href="{{route('notes')}}" class="notes__cancel-button">

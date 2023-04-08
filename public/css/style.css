@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+.tox.tox-tinymce {
+  width: 100%;
+  min-height: 300px;
+}
+
 .form-wrapper {
   display: flex;
   justify-content: center;
@@ -261,7 +266,7 @@
 .nav__user-info {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
 }
 .nav__user-login {
