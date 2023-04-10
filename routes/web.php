@@ -33,11 +33,11 @@ Route::controller(DashboardController::class)->middleware(['auth', 'verified'])-
 Route::controller(NotesController::class)->middleware(['auth', 'verified'])->group(function () {
     Route::get('/notatki', 'index')->name('notes');
     Route::get('/notatki/dodaj', 'create')->name('notes.add');
-    Route::get('/notatki/{id}', 'show')->name('notes.show');
-    Route::get('/notatki/{id}/edytuj', 'edit')->name('notes.edit');
+    Route::get('/notatki/{note}', 'show')->name('notes.show');
+    Route::get('/notatki/{note}/edytuj', 'edit')->name('notes.edit');
     
-    Route::delete('/notatki/{id}', 'destroy')->name('notes.destroy');
-    Route::patch('/notatki/{id}', 'update')->name('notes.update');
+    Route::delete('/notatki/{note}', 'destroy')->name('notes.destroy');
+    Route::patch('/notatki/{note}', 'update')->name('notes.update');
     Route::post('/notatki/nowa', 'store')->name('notes.store');
 });
 

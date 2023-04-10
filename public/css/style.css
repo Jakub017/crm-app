@@ -1,5 +1,5 @@
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 10px;
   margin: 0;
   padding: 0;
@@ -366,9 +366,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
 }
 .main-content__latest-note:hover {
   box-shadow: 0 0 4px #ccc;
+}
+.main-content__latest-note-circle {
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  position: absolute;
+  top: -35px;
+  right: -35px;
 }
 .main-content__latest-note-text {
   display: flex;
@@ -380,8 +391,13 @@
 .main-content__latest-note-title {
   font-size: 1.8rem;
   font-weight: 400;
+  color: #000;
 }
 .main-content__latest-note-content {
+  font-size: 1.4rem;
+  color: #848484;
+}
+.main-content__latest-note-content * {
   font-size: 1.4rem;
   color: #848484;
 }
@@ -523,7 +539,7 @@
 }
 .notes__title {
   font-size: 3.6rem;
-  font-weight: 400;
+  font-weight: 600;
   margin-top: 2rem;
 }
 .notes__wrapper {
@@ -534,7 +550,7 @@
   flex-wrap: wrap;
   gap: 2rem;
 }
-.notes__note {
+.notes__note, .notes__add-note {
   border: 1px solid #E6E6E6;
   border-radius: 1rem;
   display: flex;
@@ -542,13 +558,38 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  max-width: 350px;
-  height: 250px;
-  padding: 2rem;
+  max-width: 300px;
+  height: 300px;
+  padding: 1.5rem;
   transition: 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
-.notes__note:hover {
+.notes__note:hover, .notes__add-note:hover {
   box-shadow: 0 0 4px #ccc;
+}
+.notes__add-note {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.notes__add-note-text {
+  color: #1A8FFF;
+  font-size: 2rem;
+  font-weight: 300;
+}
+.notes__circle {
+  border: 2px dashed #1A8FFF;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7rem;
+  color: #1A8FFF;
 }
 .notes__text {
   display: flex;
@@ -559,18 +600,30 @@
 }
 .notes__name {
   font-size: 2.2rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 .notes__content {
   font-size: 1.6rem;
   line-height: 1.3;
   color: #848484;
+  height: 150px;
 }
 .notes__info {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: relative;
+}
+.notes__info::after {
+  content: "";
+  position: absolute;
+  width: 95%;
+  height: 2px;
+  background-color: #ccc;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .notes__date {
   color: #1A8FFF;
@@ -622,13 +675,35 @@
   width: 100%;
   max-width: 800px;
 }
-.notes__group {
+.notes__input-group {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.notes__form-group {
+  border: 1px solid #E6E6E6;
+  padding: 2rem;
+  border-radius: 1rem;
   width: 100%;
-  max-width: 800px;
+}
+.notes__form-group-heading {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 2rem;
+}
+.notes__form-inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.notes__form-inputs .notes__input-group {
+  flex-grow: 1;
 }
 .notes__input, .notes__textarea {
   border: 2px solid #EEE;
@@ -637,6 +712,11 @@
   font-size: 1.6rem;
   width: 100%;
   outline-color: #1A8FFF;
+  height: 50px;
+  background-color: transparent;
+}
+.notes__textarea {
+  min-height: 250px;
 }
 .notes__label {
   font-size: 1.6rem;
@@ -648,6 +728,7 @@
   align-items: center;
   gap: 2rem;
   align-self: flex-end;
+  flex-wrap: wrap;
 }
 .notes__submit-button {
   background-color: #1A8FFF;
@@ -682,7 +763,7 @@
 }
 .passwords__title {
   font-size: 3.6rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 .passwords__top-bar {
   margin-top: 2rem;
@@ -814,7 +895,7 @@
 }
 .calendar__title {
   font-size: 3.6rem;
-  font-weight: 400;
+  font-weight: 600;
   margin-top: 2rem;
 }
 .calendar__wrapper {
@@ -1046,8 +1127,9 @@
     display: none;
   }
   .sidebar {
-    position: relative;
+    position: sticky;
     left: 0;
+    top: 0;
   }
   .sidebar__close {
     display: none;

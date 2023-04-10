@@ -101,6 +101,7 @@
                 </svg>
             </a>
         </div>
-        <p class="sidebar__footer-info">Projekt i realizacja: <a class="sidebar__footer-author">Jakub Lipiński</a></p>
+        <p class="sidebar__footer-info">Projekt i realizacja: <a href="https://lipinskijakub.pl/" target="_blank"
+                class="sidebar__footer-author">Jakub Lipiński</a></p>
     </div>
 </div>

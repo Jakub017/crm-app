@@ -10,16 +10,21 @@
         <div class="main-content__latest-wrapper">
             @foreach($latestNotes as $latestNote)
             <div class="main-content__latest-note">
+                <div class="main-content__latest-note-circle" style="background-color: #1A8FFF;"></div>
                 <div class="main-content__latest-note-text">
                     <h3 class="main-content__latest-note-title">{{ $latestNote->title }}</h3>
-                    <p class="main-content__latest-note-content">{{ $latestNote->content }}</p>
+                    <div class="main-content__latest-note-content">
+                        <div class="main-content__latest-note-date">
+                            Data utworzenia: <b>{{ $latestNote->created_at->format('d.m.Y') }}</b>
+                        </div>
+                    </div>
                 </div>
             </div>
             @endforeach
-            <div class="main-content__latest-note">
+            <a href="{{route('notes.add')}}" class="main-content__latest-note">
                 <div class="main-content__latest-note-text">
                     <h3 class="main-content__latest-note-title">Dodaj notatkę</h3>
-                    <p class="main-content__latest-note-content">Spisz swoje myśli</p>
+                    <div class="main-content__latest-note-content">Spisz swoje myśli</div>
                 </div>
                 <div class="main-content__latest-icon">
                     <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +33,7 @@
                             fill="#848484" />
                     </svg>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
     <div class="main-content__section">

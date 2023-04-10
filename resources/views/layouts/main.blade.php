@@ -8,7 +8,8 @@
     <title>Password App - @yield('title')</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://cdn.tiny.cloud/1/njhu24zco629p7gplac3lpdoq5apb2lxig08zf3acrvbwtqj/tinymce/6/tinymce.min.js"
         referrerpolicy="origin"></script>

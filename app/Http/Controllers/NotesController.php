@@ -43,14 +43,13 @@ class NotesController extends Controller
     public function store(Request $request)
     {
         $attributes = $request->validate([
-            'title' => 'required|max:50',
-            'content' => 'required|min:20',
-            // 'icon' => 'image',
+            'title' => 'required|unique:notes,title',
+            'content' => 'required',
+            'tags' => '',
         ]);
 
         $attributes['user_id'] = Auth::user()->id;
-        // $attributes['icon'] = $request->file('icon')->store('icons');
-        
+                
         Note::create($attributes);
 
         // Note::create([
@@ -68,12 +67,9 @@ class NotesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Note $note)
     {
-        $note = Note::find($id);
-        return view('notes.note', [
-            'note' => $note,
-        ]);
+        return view('notes.note', compact('note'));
     }
 
     /**
@@ -82,12 +78,9 @@ class NotesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Note $note)
     {
-        $note = Note::find($id);
-        return view('notes.edit', [
-            'note' => $note,
-        ]);
+        return view('notes.edit', compact('note'));
     }
 
     /**
@@ -97,21 +90,16 @@ class NotesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Note $note)
     {
-        $note = Note::find($id);
 
         $attributes = $request->validate([
-            'title' => 'required|max:50',
-            'content' => 'required|min:20'
+            'title' => 'required|unique:notes,title,' . $note->id,
+            'content' => 'required',
+            'tags' => '',
         ]);
 
         $note->update($attributes);
-
-        // $note->update([
-        //     'title' => $request->title,
-        //     'content' => $request->content
-        // ]);
 
         return redirect('/notatki');
     }
@@ -122,9 +110,8 @@ class NotesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Note $note)
     {
-        $note = Note::find($id);
         $note->delete();
 
         return redirect('/notatki');

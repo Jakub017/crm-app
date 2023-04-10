@@ -1,5 +1,5 @@
 * {
-    font-family: 'Roboto',
+    font-family: 'Poppins',
         sans-serif;
     font-size: 10px;
     margin: 0;
@@ -442,10 +442,23 @@ $classicBorderRadius: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+
 
         &:hover {
             box-shadow: 0 0 4px #ccc;
         }
+    }
+
+    &__latest-note-circle {
+        width: 75px;
+        height: 75px;
+        border-radius: 100%;
+        position: absolute;
+        top: -35px;
+        right: -35px;
     }
 
     &__latest-note-text {
@@ -459,11 +472,17 @@ $classicBorderRadius: 10px;
     &__latest-note-title {
         font-size: 1.8rem;
         font-weight: 400;
+        color: #000;
     }
 
     &__latest-note-content {
         font-size: 1.4rem;
         color: $gray;
+
+        & * {
+            font-size: 1.4rem;
+            color: $gray;
+        }
     }
 
 }
@@ -629,7 +648,7 @@ $classicBorderRadius: 10px;
 
     &__title {
         font-size: 3.6rem;
-        font-weight: 400;
+        font-weight: 600;
         margin-top: 2rem;
     }
 
@@ -642,7 +661,8 @@ $classicBorderRadius: 10px;
         gap: 2rem;
     }
 
-    &__note {
+    &__note,
+    &__add-note {
         border: 1px solid #E6E6E6;
         border-radius: 1rem;
         display: flex;
@@ -650,14 +670,42 @@ $classicBorderRadius: 10px;
         justify-content: space-between;
         align-items: flex-start;
         width: 100%;
-        max-width: 350px;
-        height: 250px;
-        padding: 2rem;
+        max-width: 300px;
+        height: 300px;
+        padding: 1.5rem;
         transition: 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
 
         &:hover {
             box-shadow: 0 0 4px #ccc;
         }
+    }
+
+    &__add-note {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__add-note-text {
+        color: $blue;
+        font-size: 2rem;
+        font-weight: 300;
+    }
+
+    &__circle {
+        border: 2px dashed $blue;
+        border-radius: 100%;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 7rem;
+        color: $blue;
     }
 
     &__text {
@@ -670,20 +718,34 @@ $classicBorderRadius: 10px;
 
     &__name {
         font-size: 2.2rem;
-        font-weight: 400;
+        font-weight: 600;
     }
 
     &__content {
         font-size: 1.6rem;
         line-height: 1.3;
         color: #848484;
+        height: 150px;
     }
+
 
     &__info {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 95%;
+            height: 2px;
+            background-color: #ccc;
+            top: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 
     &__date {
@@ -747,14 +809,41 @@ $classicBorderRadius: 10px;
         max-width: 800px;
     }
 
-    &__group {
+    &__input-group {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        width: 100%;
-        max-width: 800px;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
     }
+
+    &__form-group {
+        border: 1px solid #E6E6E6;
+        padding: 2rem;
+        border-radius: 1rem;
+        width: 100%;
+    }
+
+    &__form-group-heading {
+        font-size: 2rem;
+        font-weight: normal;
+        margin-bottom: 2rem;
+    }
+
+    &__form-inputs {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        width: 100%;
+
+        & .notes__input-group {
+            flex-grow: 1;
+        }
+    }
+
 
     &__input,
     &__textarea {
@@ -764,6 +853,12 @@ $classicBorderRadius: 10px;
         font-size: 1.6rem;
         width: 100%;
         outline-color: $blue;
+        height: 50px;
+        background-color: transparent;
+    }
+
+    &__textarea {
+        min-height: 250px;
     }
 
     &__label {
@@ -777,6 +872,7 @@ $classicBorderRadius: 10px;
         align-items: center;
         gap: 2rem;
         align-self: flex-end;
+        flex-wrap: wrap;
     }
 
     &__submit-button {
@@ -814,7 +910,7 @@ $classicBorderRadius: 10px;
 
     &__title {
         font-size: 3.6rem;
-        font-weight: 400;
+        font-weight: 600;
     }
 
     &__top-bar {
@@ -974,7 +1070,7 @@ $classicBorderRadius: 10px;
 
     &__title {
         font-size: 3.6rem;
-        font-weight: 400;
+        font-weight: 600;
         margin-top: 2rem;
     }
 
@@ -1247,8 +1343,9 @@ $classicBorderRadius: 10px;
     }
 
     .sidebar {
-        position: relative;
+        position: sticky;
         left: 0;
+        top: 0;
 
 
         &__close {
