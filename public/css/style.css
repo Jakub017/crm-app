@@ -374,12 +374,13 @@
   box-shadow: 0 0 4px #ccc;
 }
 .main-content__latest-note-circle {
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
   border-radius: 100%;
   position: absolute;
-  top: -35px;
-  right: -35px;
+  top: -30px;
+  right: -30px;
+  background-color: #1A8FFF;
 }
 .main-content__latest-note-text {
   display: flex;

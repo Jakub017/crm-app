@@ -9,8 +9,8 @@
         <h3 class="main-content__section-name">Twoje ostatnie notatki</h3>
         <div class="main-content__latest-wrapper">
             @foreach($latestNotes as $latestNote)
-            <div class="main-content__latest-note">
-                <div class="main-content__latest-note-circle" style="background-color: #1A8FFF;"></div>
+            <a href="{{route('notes.edit', $latestNote)}}" class="main-content__latest-note">
+                <div class="main-content__latest-note-circle"></div>
                 <div class="main-content__latest-note-text">
                     <h3 class="main-content__latest-note-title">{{ $latestNote->title }}</h3>
                     <div class="main-content__latest-note-content">
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             @endforeach
             <a href="{{route('notes.add')}}" class="main-content__latest-note">
                 <div class="main-content__latest-note-text">

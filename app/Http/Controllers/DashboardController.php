@@ -17,7 +17,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $latestNotes = Note::where('user_id', Auth::user()->id)->orderBy('updated_at', 'desc')->limit(2)->get();
+        $latestNotes = Note::where('user_id', Auth::user()->id)->orderBy('updated_at', 'desc')->limit(3)->get();
         $upcomingEvents = Event::orderBy('day', 'asc')->limit(3)->get();
         return view('dashboard.index', compact('latestNotes', 'upcomingEvents'));
     }
