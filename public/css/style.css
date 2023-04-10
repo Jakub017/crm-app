@@ -536,6 +536,7 @@
 .notes {
   padding: 1.5rem;
   position: relative;
+  max-width: 1200px;
 }
 .notes__title {
   font-size: 3.6rem;
@@ -602,11 +603,52 @@
   font-size: 2.2rem;
   font-weight: 600;
 }
+.notes__note-tags {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+}
+.notes__note-tag {
+  color: #fff;
+  padding: 0.35rem;
+  background-color: #1A8FFF;
+  border-radius: 50rem;
+  min-width: 60px;
+  text-align: center;
+  font-size: 1.2rem;
+}
 .notes__content {
   font-size: 1.6rem;
   line-height: 1.3;
   color: #848484;
-  height: 150px;
+}
+.notes__search {
+  width: 100%;
+  position: relative;
+}
+.notes__search-input {
+  width: 100%;
+  border-radius: 1rem;
+  border: 2px solid #E6E6E6;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  padding-right: 9rem;
+}
+.notes__search-button {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+  background-color: #1A8FFF;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
 }
 .notes__info {
   display: flex;
@@ -717,6 +759,8 @@
 }
 .notes__textarea {
   min-height: 250px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .notes__label {
   font-size: 1.6rem;

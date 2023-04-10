@@ -17,8 +17,7 @@ class NotesController extends Controller
      */
     public function index()
     {
-
-        $notes = Note::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+        $notes = Note::search(request('search'))->where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
         return view('notes.index', [
             'notes' => $notes,
         ]);
@@ -43,7 +42,7 @@ class NotesController extends Controller
     public function store(Request $request)
     {
         $attributes = $request->validate([
-            'title' => 'required|unique:notes,title',
+            'title' => 'required',
             'content' => 'required',
             'tags' => '',
         ]);
@@ -94,7 +93,7 @@ class NotesController extends Controller
     {
 
         $attributes = $request->validate([
-            'title' => 'required|unique:notes,title,' . $note->id,
+            'title' => 'required',
             'content' => 'required',
             'tags' => '',
         ]);

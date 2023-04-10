@@ -10,7 +10,7 @@
         <div class="notes__form-group">
             <h3 class="notes__form-group-heading">Informacje podstawowe</h3>
             <div class="notes__input-group">
-                <label for="title" class="notes__label">Nazwa notatki</label>
+                <label for="title" class="notes__label">Nazwa notatki *</label>
                 <input name="title" type="text" class="notes__input">
                 @error('title')
                 <p>To pole zawiera błędy</p>
@@ -24,7 +24,7 @@
                 @enderror
             </div>
             <div class="notes__input-group">
-                <label for="title" class="notes__label">Treść notatki</label>
+                <label for="title" class="notes__label">Treść notatki *</label>
                 <textarea name="content" class="notes__textarea"></textarea>
                 @error('content')
                 <p>To pole zawiera błędy</p>

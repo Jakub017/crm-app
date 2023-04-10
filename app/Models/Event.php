@@ -20,7 +20,7 @@ class Event extends Model
         if($filters['search'] ?? false) {
             $query->where('title', 'like', '%' . request('search') . '%')->orWhere('tags', 'like', '%' . request('search') . '%');
         }
-        }
+    }
 
     public function user() {
         return $this->belongsTo(User::class, 'user_id');
