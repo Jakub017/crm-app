@@ -15,7 +15,7 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::where('user_id', auth()->id())->filter(request((['tag', 'search'])))->get();
+        $events = Event::search(request('search'))->where('user_id', auth()->id())->get();
         return view('events.index', compact('events'));
     }
 
@@ -41,7 +41,6 @@ class EventsController extends Controller
             'title' => 'required',
             'day' => 'required',
             'hour' => 'required',
-            'color' => 'required',
             'tags' => '',
         ]);
 

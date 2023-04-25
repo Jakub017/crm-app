@@ -5,21 +5,19 @@ namespace App\Models;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Laravel\Scout\Searchable;
 
 class Event extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
 
-    protected $fillable = ['title', 'day', 'hour', 'tags', 'user_id', 'color', 'fulldate'];
+    protected $fillable = ['title', 'day', 'hour', 'tags', 'user_id', 'fulldate'];
 
-    public function scopeFilter($query, array $filters) {
-        if($filters['tag'] ?? false) {
-            $query->where('tags', 'like', '%' . request('tag') . '%');
-        }
-
-        if($filters['search'] ?? false) {
-            $query->where('title', 'like', '%' . request('search') . '%')->orWhere('tags', 'like', '%' . request('search') . '%');
-        }
+    public function toSearchableArray() {
+        return [
+            'title' => $this->title,
+            'tags' => $this->tags,
+        ];
     }
 
     public function user() {

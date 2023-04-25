@@ -37,13 +37,6 @@
             <h3 class="calendar__form-group-heading">Informacje dodatkowe</h3>
             <div class="calendar__form-inputs">
                 <div class="calendar__input-group">
-                    <label for="color" class="calendar__label">Kolor</label>
-                    <input name="color" type="color" class="calendar__input" value="#1A8FFF">
-                    @error('color')
-                    <p>Błąd</p>
-                    @enderror
-                </div>
-                <div class="calendar__input-group">
                     <label for="tags" class="calendar__label">Tagi (oddzielone przecinkami)</label>
                     <input name="tags" type="text" class="calendar__input">
                     @error('tags')
